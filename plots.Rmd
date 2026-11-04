@@ -1,6 +1,7 @@
 ---
 title: "Plots"
-output: html_document
+output:
+  flexdashboard::flex_dashboard:
 ---
 
 ```{r setup, include=FALSE}
