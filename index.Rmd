@@ -22,3 +22,7 @@ I am Hubert Chang, I am a 2nd year Public Health Masters student in Epidemiology
 To learn more about my working history see this [resume](resume.html) !
 
 To go home please click [index](index.html)
+
+
+# Plots
+I have made some pretty plots for [instacart](plots.html)

@@ -1,0 +1,73 @@
+---
+title: "Plots"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+```
+
+#Sample Order
+```{r}
+data("instacart")
+
+set.seed(1)
+samples = 
+  instacart |>
+  distinct(order_id) |>
+  slice_sample(n=3000) |>
+  pull(order_id)
+
+insta =
+  instacart|>
+  filter(order_id %in% samples)
+```
+
+## Bar Plot
+```{r}
+insta |>
+  count(aisle) |>
+  slice_max(n, n = 20) |>
+  mutate(aisle = fct_reorder(aisle, n)) |>
+  plot_ly(x = ~n, 
+          y = ~aisle, 
+          type = "bar", 
+          orientation ="h") |>
+  layout( title = "# of items ordered")
+```
+
+## Line Plot
+
+```{r}
+insta |>
+  distinct(order_id, order_hour_of_day) |>
+  count(order_hour_of_day) |>
+  plot_ly(
+    x = ~order_hour_of_day,
+    y = ~n,
+    type = "scatter",
+    mode = "lines+markers"
+         ) |>
+  layout(title = "orders by hour of the day")
+
+```
+
+## Box Plot
+
+```{r}
+insta |>
+  distinct(order_id, order_dow, days_since_prior_order) |>
+  mutate(order_dow = factor(order_dow)) |>
+  plot_ly(
+    x = ~order_dow,
+    y = ~days_since_prior_order,
+    color = ~order_dow,
+    type = "box"
+  ) |>
+  layout(title = "days since prior order")
+```
+
