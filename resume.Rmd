@@ -1,0 +1,15 @@
+---
+title: "Resume"
+output: html_document:
+          toc: true
+          toc_flaot: true
+---
+
+# Resume
+
+## Work Experience
+
+Healing Hands Incorporated, Clinical Case Lead Intern
+Evaluated and facilitated a 5–7 session trauma-informed curriculum for survivors of gender-based violence to strengthen program quality, relevance, and cultural responsiveness.
+Synthesized evidence from literature reviews, stakeholder input, implementation observations, and participant surveys to generate actionable, survivor-centered recommendations.
+Expanded service capacity for Healing Hands Inc. and partner organizations, advancing public health interventions and access for underserved communities.
